@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <div id="Calculo">
+        <h1>Calculadora 1</h1>
+        <input type id="input_nomeestabelecimento" placeholder="Nome da sua cozinha">
+        <br><br>
+        <input type"number" id="input_valorcozinha" placeholder="Valor da sua cozinha">
+        <br><br>
+        <input type"number" id="input_numerofuncionários" placeholder="Número de funcionários">
+        <br><br>
+        <input type"number" id="input_mediaclientes" placeholder="Número médio de clientes">
+        <br><br>
+        <input type"number" id="input_tamanhocozinha" placeholder="Tamanho cozinha (metro quadrado)">
+        <br><br>
+        <input type"number" id="input_tamanhoeplosao" placeholder="Raio da explosão em porcentagem">
+        <br><br>
+        <input type"number" id="input_numerosaidasdegas" placeholder="Quantos abastecimentos de gás">
+        <br><br>
+        <input type"number" id="input_numerobutjao" placeholder="Numero butijões">
+        <br><br>
+        <input type"number" id="input_tempo" placeholder="tempo">
+        <br><br>
+        <button onclick="verprejuizos()"> Veja Estimativa de prejuizo </button>
+        <br><br>
+    </div>
+
+</html>
+<script>
+    function verprejuizos() {
+        const nome = input_nomeestabelecimento.value
+        const valor = Number(input_valorcozinha.value)
+        const funcionários = Number(input_numerofuncionários.value)
+        const clientes = Number(input_mediaclientes.value)
+        const tamanhocozinha = Number(input_tamanhocozinha.value)
+        const explosao = Number(input_tamanhoeplosao.value)
+        const butijao = Number(input_numerobutjao.value)
+        const saidagas = Number(input_numerosaidasdegas.value)
+        const tempo = Number(input_tempo.value)
+
+        var explosaoPorcentagem = explosao / 100
+
+        var custoreparo = (valor / (tamanhocozinha * explosaoPorcentagem)) * 2
+        var custorep = custoreparo.toFixed(2)
+
+
+        var preçoBOTJA = 600
+        var pesoBOTJA = 45
+
+        var customateriaprima = (((tempo / 60) * 2) / pesoBOTJA) * (preçoBOTJA * butijao)
+        var customat = customateriaprima.toFixed(2)
+
+        var pessoasmetroquadrado = (tamanhocozinha / (funcionários + clientes))
+        var pessoasm2 = pessoasmetroquadrado.toFixed(0)
+
+        var pessoasferidas = explosao / pessoasm2
+
+        var sensores = saidagas
+
+        var inicialmult = 15.000
+        var incapaz = 54.000
+        var gravissio = 65.000
+
+
+        var custosini = pessoasferidas * inicialmult
+        var custosincapaz = pessoasferidas * incapaz
+        var custosgravissimos = pessoasferidas * gravissimo
+
+
+        Calculo.innerHTML = ` <h1> Bem vindo(a) representante da ${nome}<h1>
+           <br>
+           Nós da GasBusters fizemos sua simulação financeira veja agora! <br><br>
+           
+           Em uma cozinhad de valor ${valor}, com numero de funcionários ${funcionários}
+            
+            
+            
+            
+            ` 
+
+
+
+    }
+</script>
