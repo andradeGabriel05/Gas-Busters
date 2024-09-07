@@ -44,6 +44,11 @@ INSERT INTO dadosCliente VALUES
 
 SELECT * FROM dadosCliente ; 
 
+INSERT INTO dadosSensor VALUES
+(00.0001) ; 
+
+SELECT * FROM dadosSensor ; 
+
 INSERT INTO endereco VALUES 
 (default, '01234-567', 'Rua Cafundó do Judas', 123,'Casa 0', 'Esquina do fim'); 
 
