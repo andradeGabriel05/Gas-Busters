@@ -18,16 +18,9 @@ dtdata		DATETIME DEFAULT CURRENT_TIMESTAMP
 -- Criação da tabela do Sensor de gás MQ2
 CREATE TABLE sensor(
 id					INT PRIMARY KEY AUTO_INCREMENT,
-nome				VARCHAR(10) NOT NULL,
-porcentagem 		FLOAT NOT NULL,
-data_coleta			DATETIME NOT NULL,
-valorsensor			DECIMAL(10,2) NOT NULL,
-saidadegasinstalada VARCHAR(30) NOT NULL,
-datadeinstalação 	DATETIME DEFAULT CURRENT_TIMESTAMP,
-estaativo 			VARCHAR (10),
-PorcentagemGás 		VARCHAR (60),
-Sinal 				VARCHAR(60),
-constraint chkativo check (estaativo in ("ligado","desligado"))
+id_empresa			INT,
+porcentagem			FLOAT,
+data_coleta			DATETIME
 );
 
 -- Criação da tabela Cozinha endereço 
@@ -45,7 +38,9 @@ cep		VARCHAR(9)
 -- Criação da tabela Empresa
 CREATE TABLE empresa (
 id INT PRIMARY KEY AUTO_INCREMENT,
-nome_fantasia VARCHAR(50),
-usuario_id INT,
-endereco_id INT
+nome_empresa 	VARCHAR(100),
+id_usuario		INT,
+id_empresa		INT,
+id_sensor		INT,
+instalacao		DATETIME
 );
