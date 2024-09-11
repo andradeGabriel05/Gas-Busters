@@ -45,3 +45,29 @@ id_sensor		INT,
 instalacao		DATETIME
 );
 
+SELECT * FROM cadastro;
+
+INSERT INTO cadastro (nome, email,telefone, senha, cpf) VALUES
+('Joao', 'joao@email.com', '119990000', '123', '100200300-10'),
+('Gustavo', 'gustavo@email.com', '119991111', '12345', '120300200-20'),
+('Otavio', 'otavio@email.com', '119990312', '12333', '200300100-11'),
+('Gabriel', 'gabriel@email.com', '113211000', '33123', '100333222-10');
+
+UPDATE cadastro
+SET senha = '33333'
+WHERE id = 1;
+
+SELECT * FROM empresa;
+
+INSERT INTO empresa (nome_empresa, id_usuario, id_sensor, instalacao) VALUES
+('Tech Innovators Ltda', 1, 101, '2024-09-01'),
+('Global Solutions S.A.', 2, 102, '2024-09-01'),
+('Future Tech Inc.', 3, 103, '2024-09-01'),
+('EcoFriendly Corp.', 4, 104, '2024-09-01'),
+('HealthCare Pro Ltda', 5, 105, '2024-09-01');
+
+UPDATE empresa
+SET nome_empresa = 'Empresa teste'
+WHERE id = 1;
+
+
