@@ -32,7 +32,8 @@ estado	VARCHAR(30),
 pais	VARCHAR(30),
 cidade	VARCHAR(50),
 numero	VARCHAR(15),
-cep		VARCHAR(9)
+cep		VARCHAR(9),
+id_usuario INT
 );
 
 -- Criação da tabela Empresa
@@ -40,7 +41,7 @@ CREATE TABLE empresa (
 id INT PRIMARY KEY AUTO_INCREMENT,
 nome_empresa 	VARCHAR(100),
 id_usuario		INT,
-id_empresa		INT,
 id_sensor		INT,
 instalacao		DATETIME
 );
+
