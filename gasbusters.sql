@@ -70,4 +70,36 @@ UPDATE empresa
 SET nome_empresa = 'Empresa teste'
 WHERE id = 1;
 
+INSERT INTO cozinhaEnd (
+    rua,
+    bairro,
+    estado,
+    pais,
+    cidade,
+    numero,
+    cep,
+    id_usuario
+) 
+VALUES 
+('Rua das Flores', 'Centro', 'SP', 'Brasil', 'São Paulo', 123, '01000-000', 1),
+('Avenida Paulista', 'Bela Vista', 'SP', 'Brasil', 'São Paulo', 456, '01310-100', 2),
+('Rua Amazonas', 'Boa Vista', 'MG', 'Brasil', 'Belo Horizonte', 789, '30140-000', 3);
+
+UPDATE cozinhaEnd
+SET numero = 40
+WHERE id = 1;
+
+SELECT * FROM sensor;
+
+INSERT INTO sensor (id_empresa, porcentagem, data_coleta) 
+VALUES 
+(1, 75.5, '2024-09-11'),
+(2, 60.2, '2024-09-10'),
+(3, 85.0, '2024-09-09');
+
+UPDATE sensor
+SET porcentagem = 30
+WHERE id = 1;
+
+
 
